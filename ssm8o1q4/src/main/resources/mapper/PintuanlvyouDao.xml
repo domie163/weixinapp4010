@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.PintuanlvyouDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.PintuanlvyouEntity" id="pintuanlvyouMap">
+        <result property="pintuanmingcheng" column="pintuanmingcheng"/>
+        <result property="pintuantupian" column="pintuantupian"/>
+        <result property="kaituanrenshu" column="kaituanrenshu"/>
+        <result property="pintuanrenshu" column="pintuanrenshu"/>
+        <result property="pintuanjiage" column="pintuanjiage"/>
+        <result property="lvyoutianshu" column="lvyoutianshu"/>
+        <result property="lvyoujingdian" column="lvyoujingdian"/>
+        <result property="xiangqing" column="xiangqing"/>
+        <result property="faqizhanghao" column="faqizhanghao"/>
+        <result property="faqixingming" column="faqixingming"/>
+        <result property="lianxishouji" column="lianxishouji"/>
+        <result property="userid" column="userid"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.PintuanlvyouVO" >
+		SELECT * FROM pintuanlvyou  pintuanlvyou         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.PintuanlvyouVO" >
+		SELECT  pintuanlvyou.* FROM pintuanlvyou  pintuanlvyou
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.PintuanlvyouView" >
+
+		SELECT  pintuanlvyou.* FROM pintuanlvyou  pintuanlvyou 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.PintuanlvyouView" >
+		SELECT * FROM pintuanlvyou  pintuanlvyou <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
